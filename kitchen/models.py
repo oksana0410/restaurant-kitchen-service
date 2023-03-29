@@ -21,10 +21,11 @@ class Cook(AbstractUser):
         verbose_name_plural = "cooks"
 
     def __str__(self) -> str:
-        return (f"Username: {self.username} "
-                f"Name: {self.first_name} "
-                f"Surname: {self.last_name})"
-                )
+        return (
+            f"Username: {self.username} "
+            f"Name: {self.first_name} "
+            f"Surname: {self.last_name})"
+        )
 
 
 class DishType(models.Model):
@@ -40,10 +41,7 @@ class Dish(models.Model):
     description = models.TextField(blank=True)
     price = models.DecimalField(max_digits=6, decimal_places=2)
     dish_type = models.ForeignKey(DishType, on_delete=models.CASCADE)
-    cooks = models.ManyToManyField(
-        settings.AUTH_USER_MODEL,
-        prefetch_related="dishes"
-    )
+    cooks = models.ManyToManyField(settings.AUTH_USER_MODEL, prefetch_related="dishes")
 
     class Meta:
         ordering = ["id"]
