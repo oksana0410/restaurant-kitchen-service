@@ -24,3 +24,13 @@ class KitchenProcess(models.Model):
 
     def __str__(self):
         return f"Process: {self.process}"
+
+
+class DishType(models.Model):
+    name = models.CharField(max_length=255)
+
+    def __str__(self):
+        return f"Dish type: {self.name}"
+
+
+
