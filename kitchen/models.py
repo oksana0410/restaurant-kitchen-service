@@ -13,7 +13,7 @@ class KitchenProcess(models.Model):
 
 class Cook(AbstractUser):
     years_of_experience = models.IntegerField(null=True)
-    kitchen_process = models.ManyToManyField(KitchenProcess, prefetch_related="cooks")
+    kitchen_process = models.ManyToManyField(KitchenProcess)
 
     class Meta:
         ordering = ["username"]
@@ -41,7 +41,7 @@ class Dish(models.Model):
     description = models.TextField(blank=True)
     price = models.DecimalField(max_digits=6, decimal_places=2)
     dish_type = models.ForeignKey(DishType, on_delete=models.CASCADE)
-    cooks = models.ManyToManyField(settings.AUTH_USER_MODEL, prefetch_related="dishes")
+    cooks = models.ManyToManyField(settings.AUTH_USER_MODEL)
 
     class Meta:
         ordering = ["id"]
