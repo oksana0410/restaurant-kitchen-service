@@ -1,12 +1,7 @@
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
 
-from kitchen.models import KitchenProcess, Dish, DishType, Cook
-
-
-@admin.register(KitchenProcess)
-class KitchenProcessAdmin(admin.ModelAdmin):
-    pass
+from kitchen.models import Dish, DishType, Cook
 
 
 @admin.register(Cook)
