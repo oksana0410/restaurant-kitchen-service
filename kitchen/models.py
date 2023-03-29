@@ -12,18 +12,14 @@ class Cook(AbstractUser):
         verbose_name_plural = "cooks"
 
     def __str__(self) -> str:
-        return (
-            f"Username: {self.username} "
-            f"Name: {self.first_name} "
-            f"Surname: {self.last_name})"
-        )
+        return f"{self.username} ({self.first_name} {self.last_name})"
 
 
 class DishType(models.Model):
     name = models.CharField(max_length=255)
 
     def __str__(self):
-        return f"Dish type: {self.name}"
+        return self.name
 
 
 class Dish(models.Model):
@@ -39,4 +35,4 @@ class Dish(models.Model):
         verbose_name_plural = "dishes"
 
     def __str__(self) -> str:
-        return f"Name: {self.name}"
+        return self.name
