@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <div class="jumbotron">
+    <h1 class="display-4">Welcome to My Kitchen!</h1>
+    <p class="lead">Here are some quick facts about our kitchen:</p>
+    <ul>
+      <li>We have {{ num_cooks }} cooks.</li>
+      <li>We offer {{ num_dishes }} different dishes.</li>
+      <li>We have {{ num_dish_types }} different types of dishes.</li>
+    </ul>
+    <hr class="my-4">
+    <p>You have visited this page {{ num_visits }} times.</p>
+  </div>
+{% endblock %}

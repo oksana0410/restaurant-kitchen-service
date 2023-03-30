@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h1 class="mb-4">Dish Types</h1>
+
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Name</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for dish_type in object_list %}
+        <tr>
+          <td>{{ dish_type.id }}</td>
+          <td>{{ dish_type.name }}</td>
+        </tr>
+      {% empty %}
+        <tr>
+          <td colspan="2">No dish types available.</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+  {% include "kitchen/pagination.html" %}
+{% endblock %}
+
+

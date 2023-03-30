@@ -1,10 +1,29 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Title</title>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
-
+    <header>
+        <nav>
+            <ul>
+                <li><a href="{% url 'kitchen:index' %}">Kitchen App</a></li>
+                <li><a href="{% url 'kitchen:dish-type-list' %}">Dish Types</a></li>
+                <li><a href="{% url 'kitchen:cook-list' %}">Cooks</a></li>
+                <li><a href="{% url 'kitchen:dish-list' %}">Dishes</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+    <footer>
+        <p>Kitchen App &copy; 2023</p>
+    </footer>
 </body>
 </html>
+
