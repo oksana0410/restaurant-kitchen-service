@@ -1,7 +1,9 @@
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import render
+from django.urls import reverse_lazy
 from django.views import generic
 
+from kitchen.forms import CookForm
 from kitchen.models import Cook, Dish, DishType
 
 
@@ -30,6 +32,23 @@ class DishTypeListView(LoginRequiredMixin, generic.ListView):
 
 class CookListView(LoginRequiredMixin, generic.ListView):
     model = Cook
+
+
+class CookCreateView(LoginRequiredMixin, generic.CreateView):
+    model = Cook
+    form_class = CookForm
+    success_url = reverse_lazy("kitchen:cook-list")
+
+
+class CookUpdateView(LoginRequiredMixin, generic.UpdateView):
+    model = Cook
+    form_class = CookForm
+    success_url = reverse_lazy('kitchen:cook-list')
+
+
+class CookDeleteView(LoginRequiredMixin, generic.DeleteView):
+    model = Cook
+    success_url = reverse_lazy('kitchen:cook-list')
 
 
 class DishListView(LoginRequiredMixin, generic.ListView):
