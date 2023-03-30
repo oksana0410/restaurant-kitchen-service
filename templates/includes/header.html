@@ -1,0 +1,13 @@
+<header>
+  {% include 'includes/log_button.html' %}
+  <div class="header-bg"></div>
+  <nav>
+    <ul>
+      <li><a href="{% url 'kitchen:index' %}">Home</a></li>
+      <li><a href="{% url 'kitchen:dish-type-list' %}">Dish Types</a></li>
+      <li><a href="{% url 'kitchen:cook-list' %}">Cooks</a></li>
+      <li><a href="{% url 'kitchen:dish-list' %}">Dishes</a></li>
+    </ul>
+  </nav>
+</header>
+

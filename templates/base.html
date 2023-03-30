@@ -3,30 +3,17 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}{% endblock %}</title>
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="{% url 'kitchen:index' %}">Kitchen App</a></li>
-                <li><a href="{% url 'kitchen:dish-type-list' %}">Dish Types</a></li>
-                <li><a href="{% url 'kitchen:cook-list' %}">Cooks</a></li>
-                <li><a href="{% url 'kitchen:dish-list' %}">Dishes</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
+    {% include 'includes/header.html' %}
+
+    <div class="container">
         {% block content %}
         {% endblock %}
-    </main>
-    <footer>
-        <p>Kitchen App &copy; 2023</p>
-    </footer>
+    </div>
 </body>
 </html>
-
-{% block after_body %}
-{% endblock %}
-

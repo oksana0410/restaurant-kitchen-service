@@ -4,8 +4,19 @@ from kitchen.views import (
     index,
     DishTypeListView,
     CookListView,
-    DishListView, DishTypeDetailView, DishTypeCreateView, DishTypeUpdateView, DishTypeDeleteView, CookDetailView,
-    CookCreateView, CookUpdateView, CookDeleteView, DishCreateView, DishDetailView, DishUpdateView, DishDeleteView,
+    DishListView,
+    DishTypeDetailView,
+    DishTypeCreateView,
+    DishTypeUpdateView,
+    DishTypeDeleteView,
+    CookDetailView,
+    CookCreateView,
+    CookUpdateView,
+    CookDeleteView,
+    DishCreateView,
+    DishDetailView,
+    DishUpdateView,
+    DishDeleteView,
     toggle_assign_to_dish
 )
 

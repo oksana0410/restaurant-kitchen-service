@@ -1,0 +1,107 @@
+body {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+main {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 50px;
+  background-color: #fff;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+header {
+  position: relative;
+  height: 300px;
+}
+
+.header-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('/static/images/header-background.jpg');
+  background-color: #333;
+  color: #fff;
+  opacity: 0.7;
+  z-index: -1;
+}
+
+nav {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+}
+
+nav li {
+  margin: 0;
+}
+
+nav a {
+  display: block;
+  padding: 10px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: all 0.2s ease;
+}
+
+nav a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 5px;
+}
+
+.login-block a {
+  font-size: 24px;
+  color: #fff;
+  text-decoration: none;
+  margin-left: 10px;
+  padding: 10px 20px;
+  border: 2px solid #fff;
+  border-radius: 5px;
+}
+
+.login-block a:hover {
+  background-color: #fff;
+  color: #333;
+}
+
+.logout {
+  text-align: center;
+}
+
+.hrefstyle {
+  color: #333; /* Set a neutral color for links */
+  text-decoration: blink; /* Use an underline to indicate links */
+}
+
+.hrefstyle:hover {
+  /* Optional: Add a subtle hover effect */
+  opacity: 0.8;
+}
