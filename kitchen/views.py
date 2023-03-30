@@ -3,7 +3,7 @@ from django.shortcuts import render
 from django.urls import reverse_lazy
 from django.views import generic
 
-from kitchen.forms import CookForm, DishForm
+from kitchen.forms import CookForm, DishForm, DishTypeForm
 from kitchen.models import Cook, Dish, DishType
 
 
@@ -28,6 +28,23 @@ def index(request):
 class DishTypeListView(LoginRequiredMixin, generic.ListView):
     model = DishType
     paginate_by = 5
+
+
+class DishTypeCreateView(LoginRequiredMixin, generic.CreateView):
+    model = DishType
+    form_class = DishTypeForm
+    success_url = reverse_lazy('kitchen:dish-type-list')
+
+
+class DishTypeUpdateView(LoginRequiredMixin, generic.UpdateView):
+    model = DishType
+    form_class = DishTypeForm
+    success_url = reverse_lazy('kitchen:dish-type-list')
+
+
+class DishTypeDeleteView(LoginRequiredMixin, generic.DeleteView):
+    model = DishType
+    success_url = reverse_lazy('kitchen:dish-type-list')
 
 
 class CookListView(LoginRequiredMixin, generic.ListView):

@@ -20,3 +20,9 @@ class DishForm(forms.ModelForm):
     class Meta:
         model = Dish
         fields = ["name", "description", "price", "dish_type", "cooks"]
+
+
+class DishTypeForm(forms.ModelForm):
+    class Meta:
+        model = DishType
+        fields = ["name"]
