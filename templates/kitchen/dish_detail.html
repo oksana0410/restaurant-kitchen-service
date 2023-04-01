@@ -34,6 +34,9 @@
         <ul>
           <li>
             <a class="hrefstyle" href="{% url 'kitchen:cook-detail' pk=cook.id %}">{{ cook.username }}</a>
+            {% if cook.first_name and cook.last_name %}
+              <a>({{ cook.first_name }} {{ cook.last_name }})</a>
+            {% endif %}
           </li>
         </ul>
       {% endfor %}
