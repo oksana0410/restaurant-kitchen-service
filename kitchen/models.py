@@ -27,7 +27,7 @@ class Dish(models.Model):
     description = models.TextField(blank=True)
     price = models.DecimalField(max_digits=6, decimal_places=2)
     dish_type = models.ForeignKey(DishType, on_delete=models.CASCADE, related_name="dishes")
-    cooks = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name="dishes")
+    cooks = models.ManyToManyField(settings.AUTH_USER_MODEL, blank=True, related_name="dishes")
 
     class Meta:
         ordering = ["id"]
