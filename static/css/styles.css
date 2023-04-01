@@ -17,14 +17,20 @@ main {
 }
 
 .container {
-  max-width: 960px;
+  width: 80%;
   margin: 0 auto;
-  padding: 0 15px;
+  padding: 20px;
 }
+
+.pagination {
+  display: flex;
+  justify-content: center;
+}
+
 
 header {
   position: relative;
-  height: 300px;
+  height: 310px;
 }
 
 .header-bg {
@@ -98,7 +104,7 @@ nav a:hover {
 }
 
 .hrefstyle {
-  color: #333; /* Set a neutral color for links */
+  color: #000000; /* Set a neutral color for links */
   text-decoration: blink; /* Use an underline to indicate links */
 }
 
@@ -125,9 +131,75 @@ nav a:hover {
 
 .container1 {
   background-color: #f5f5f5;
-  padding: 20px;
+  padding: 10px;
   border-radius: 10px;
   text-align: center;
 }
 
+table {
+  text-align: center;
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin-top: 10px;
+  margin-bottom: 50px;
+}
+
+thead {
+  color: black;
+  font-weight: bold;
+}
+
+th {
+  padding: 10px;
+  text-align: center;
+  border-bottom: 2px solid #ddd;
+}
+
+td {
+  padding: 15px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+}
+
+tr:hover {
+  background-color: #f5f5f5;
+}
+
+.btn {
+  font-weight: bold;
+  padding: 10px 20px;
+  border-radius: 5px;
+  transition: all 0.2s ease-in-out;
+}
+
+.btn-dark {
+  background-color: #333;
+  color: #fff;
+}
+
+.btn-secondary {
+  background-color: #ccc;
+  color: #333;
+}
+
+.form-inline {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.form-inline .form-control {
+  width: auto;
+  margin-right: 10px;
+}
+
+@media only screen and (max-width: 767px) {
+  th, td {
+    padding: 10px;
+  }
+  .btn {
+    padding: 8px 16px;
+  }
+}
 
