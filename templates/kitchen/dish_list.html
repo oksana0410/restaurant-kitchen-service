@@ -35,7 +35,7 @@
               <td>{{ dish.id }}</td>
               <td><a class="hrefstyle" href="{% url 'kitchen:dish-detail' pk=dish.id %}">{{ dish.name }}</a></td>
               <td>{{ dish.price }}</td>
-              <td>{{ dish.dish_type }}</td>
+              <td><a class="hrefstyle" href="{% url 'kitchen:dish-type-detail' pk=dish.dish_type.id %}">{{ dish.dish_type }}</a></td>
               <td><a href="{% url 'kitchen:dish-update' pk=dish.id %}" role="button" class='btn btn-secondary'>Update</a></td>
               <td><a href="{% url 'kitchen:dish-delete' pk=dish.id %}" role="button" class='btn btn-dark'>Delete</a></td>
             </tr>

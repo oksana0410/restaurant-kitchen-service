@@ -30,7 +30,7 @@
         {% for type in dish_type_list %}
         <tr>
           <td>{{ type.id }}</td>
-          <td><a class="hrefstyle" href="{{ type.get_absolute_url }}">{{ type.name }}</a></td>
+          <td><a class="hrefstyle" href="{% url 'kitchen:dish-type-detail' pk=type.id %}">{{ type.name }}</a></td>
           <td><a href="{% url 'kitchen:dish-type-update' pk=type.id %}" role="button" class='btn btn-secondary'>Update</a></td>
           <td><a href="{% url 'kitchen:dish-type-delete' pk=type.id %}" role="button" class='btn btn-dark'>Delete</a></td>
         </tr>
