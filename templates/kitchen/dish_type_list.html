@@ -34,13 +34,13 @@
           <td><a href="{% url 'kitchen:dish-type-update' pk=type.id %}" role="button" class='btn btn-secondary'>Update</a></td>
           <td><a href="{% url 'kitchen:dish-type-delete' pk=type.id %}" role="button" class='btn btn-dark'>Delete</a></td>
         </tr>
-        {% empty %}
-        <tr>
-          <td colspan="5">There are no dish types in the kitchen.</td>
-        </tr>
         {% endfor %}
       </tbody>
     </table>
+  {% else %}
+    <tr>
+      <td colspan="5">There is no dish types in the kitchen. You can create first one.</td>
+    </tr>
   {% endif %}
   <div class="row justify-content-center align-items-center">
     {% block pagination %}

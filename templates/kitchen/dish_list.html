@@ -39,13 +39,13 @@
               <td><a href="{% url 'kitchen:dish-update' pk=dish.id %}" role="button" class='btn btn-secondary'>Update</a></td>
               <td><a href="{% url 'kitchen:dish-delete' pk=dish.id %}" role="button" class='btn btn-dark'>Delete</a></td>
             </tr>
-          {% empty %}
-            <tr>
-              <td colspan="5">There are no cooks in the kitchen.</td>
-            </tr>
           {% endfor %}
         </tbody>
       </table>
+    {% else %}
+      <tr>
+        <td colspan="5">There are no dishes in the kitchen. You can create first one.</td>
+      </tr>
     {% endif %}
   </div>
 {% endblock %}
