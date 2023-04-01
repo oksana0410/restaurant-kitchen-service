@@ -2,7 +2,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
-from django.urls import reverse_lazy
+from django.urls import reverse_lazy, reverse
 from django.views import generic
 
 from kitchen.forms import CookForm, DishForm, DishTypeForm, DishTypeSearchForm, DishSearchForm, CookSearchForm
@@ -180,5 +180,4 @@ def toggle_assign_to_dish(request, pk):
     else:
         cook.dishes.add(pk)
     return HttpResponseRedirect(
-        reverse_lazy("kitchen:dish-detail", args=[pk])
-    )
+        reverse_lazy("kitchen:dish-detail", args=[pk]))

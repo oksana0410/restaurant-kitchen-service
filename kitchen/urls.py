@@ -103,6 +103,7 @@ urlpatterns = [
         toggle_assign_to_dish,
         name="toggle-dish-assign",
     ),
+
 ]
 
 app_name = "kitchen"
