@@ -33,7 +33,7 @@
           {% for dish in dish_list %}
             <tr>
               <td>{{ dish.id }}</td>
-              <td><a class="hrefstyle" href="{{ dish.get_absolute_url }}">{{ dish.name }}</a></td>
+              <td><a class="hrefstyle" href="{% url 'kitchen:dish-detail' pk=dish.id %}">{{ dish.name }}</a></td>
               <td>{{ dish.price }}</td>
               <td>{{ dish.dish_type }}</td>
               <td><a href="{% url 'kitchen:dish-update' pk=dish.id %}" role="button" class='btn btn-secondary'>Update</a></td>
