@@ -40,7 +40,8 @@
           <td><a href="{% url 'kitchen:cook-update' pk=cook.id %}" role="button" class='btn btn-secondary'>Update</a></td>
           <td><a href="{% url 'kitchen:cook-delete' pk=cook.id %}" role="button" class='btn btn-dark'>Delete</a></td>
         {% else %}
-          <a>No permission</a>
+          <td><a>No permission</a></td>
+          <td><a>No permission</a></td>
         {% endif %}
       </tr>
       {% endfor %}
