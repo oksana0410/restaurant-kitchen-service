@@ -36,8 +36,12 @@
         <td>{{ cook.first_name }}</td>
         <td>{{ cook.last_name }}</td>
         <td>{{ cook.years_of_experience }}</td>
-        <td><a href="{% url 'kitchen:cook-update' pk=cook.id %}" role="button" class='btn btn-secondary'>Update</a></td>
-        <td><a href="{% url 'kitchen:cook-delete' pk=cook.id %}" role="button" class='btn btn-dark'>Delete</a></td>
+        {% if request.user.username == cook.username or user.is_superuser %}
+          <td><a href="{% url 'kitchen:cook-update' pk=cook.id %}" role="button" class='btn btn-secondary'>Update</a></td>
+          <td><a href="{% url 'kitchen:cook-delete' pk=cook.id %}" role="button" class='btn btn-dark'>Delete</a></td>
+        {% else %}
+          <a>No permission</a>
+        {% endif %}
       </tr>
       {% endfor %}
     </tbody>
