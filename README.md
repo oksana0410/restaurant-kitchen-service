@@ -4,7 +4,7 @@ Django Project for managing restaurant kitchen.
 
 ## Check it out!
 
-[Restaurant kitchen service project deployed]()
+[Restaurant kitchen service project deployed](https://restaurant-kitchen-service-e207.onrender.com)
 
 
 ## Installation
