@@ -51,8 +51,16 @@ class PrivateViewTest(TestCase):
 
     def test_retrieve_dish(self):
         dish_type = DishType.objects.create(name="test_name")
-        Dish.objects.create(name="test_name_1", dish_type=dish_type, price=2)
-        Dish.objects.create(name="test_name_2", dish_type=dish_type, price=2)
+        Dish.objects.create(
+            name="test_name_1",
+            dish_type=dish_type,
+            price=2
+        )
+        Dish.objects.create(
+            name="test_name_2",
+            dish_type=dish_type,
+            price=2
+        )
 
         response = self.client.get(DISHES_URL)
         dishes = Dish.objects.all()

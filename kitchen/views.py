@@ -5,7 +5,14 @@ from django.shortcuts import render
 from django.urls import reverse_lazy, reverse
 from django.views import generic
 
-from kitchen.forms import CookForm, DishForm, DishTypeForm, DishTypeSearchForm, DishSearchForm, CookSearchForm
+from kitchen.forms import (
+    CookForm,
+    DishForm,
+    DishTypeForm,
+    DishTypeSearchForm,
+    DishSearchForm,
+    CookSearchForm
+)
 from kitchen.models import Cook, Dish, DishType
 
 
