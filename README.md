@@ -7,8 +7,8 @@ Django Project for managing restaurant kitchen.
 [Restaurant kitchen service project deployed](https://restaurant-kitchen-service-e207.onrender.com)
 
 You can create you own account or log in using:
-    username: admin1
-    password: adminpassword
+    username: admin1;
+    password: adminpassword;
 
 
 ## Installation
