@@ -21,6 +21,9 @@ pip install -r requirements.txt
 python manage.py migrate
 python manage.py runserver # starts Django Server
 ```
+You can create you own account or log in using:
+    username: admin1
+    password: adminpassword
 ## Features
 
 * Robust authentication system for both Cooks and Users
