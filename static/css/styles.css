@@ -1,0 +1,204 @@
+body {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+main {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 50px;
+  background-color: #fff;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+}
+
+
+header {
+  position: relative;
+  height: 310px;
+}
+
+.header-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('/static/images/header-background.jpg');
+  background-color: #333;
+  color: #fff;
+  opacity: 0.7;
+  z-index: -1;
+}
+
+nav {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+}
+
+nav li {
+  margin: 0;
+}
+
+nav a {
+  display: block;
+  padding: 10px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: all 0.2s ease;
+}
+
+nav a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white;
+  border-radius: 5px;
+}
+
+.login-block a {
+  font-size: 24px;
+  color: #fff;
+  text-decoration: none;
+  margin-left: 10px;
+  padding: 10px 20px;
+  border: 2px solid #fff;
+  border-radius: 5px;
+}
+
+.login-block a:hover {
+  background-color: #fff;
+  color: #333;
+}
+
+.logout {
+  text-align: center;
+}
+
+.hrefstyle {
+  color: #000000; /* Set a neutral color for links */
+  text-decoration: blink; /* Use an underline to indicate links */
+}
+
+.hrefstyle:hover {
+  /* Optional: Add a subtle hover effect */
+  opacity: 0.8;
+  color: #333333;
+}
+
+.center {
+  margin: auto;
+  width: 50%;
+  border: 3px solid green;
+  padding: 10px;
+}
+
+.center1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+}
+
+.container1 {
+  background-color: #f5f5f5;
+  padding: 10px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+table {
+  text-align: center;
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin-top: 10px;
+  margin-bottom: 50px;
+}
+
+thead {
+  color: black;
+  font-weight: bold;
+}
+
+th {
+  padding: 10px;
+  text-align: center;
+  border-bottom: 2px solid #ddd;
+}
+
+td {
+  padding: 15px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+}
+
+tr:hover {
+  background-color: #f5f5f5;
+}
+
+.btn {
+  font-weight: bold;
+  padding: 10px 20px;
+  border-radius: 5px;
+  transition: all 0.2s ease-in-out;
+}
+
+.btn-dark {
+  background-color: #333;
+  color: #fff;
+}
+
+.btn-secondary {
+  background-color: #ccc;
+  color: #333;
+}
+
+.form-inline {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.form-inline .form-control {
+  width: auto;
+  margin-right: 10px;
+}
+
+@media only screen and (max-width: 767px) {
+  th, td {
+    padding: 10px;
+  }
+  .btn {
+    padding: 8px 16px;
+  }
+}
