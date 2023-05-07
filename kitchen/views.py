@@ -2,7 +2,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
-from django.urls import reverse_lazy, reverse
+from django.urls import reverse_lazy
 from django.views import generic
 
 from kitchen.forms import (
@@ -11,7 +11,8 @@ from kitchen.forms import (
     DishTypeForm,
     DishTypeSearchForm,
     DishSearchForm,
-    CookSearchForm
+    CookSearchForm,
+    CookUpdateForm
 )
 from kitchen.models import Cook, Dish, DishType
 
@@ -124,8 +125,19 @@ class CookCreateView(generic.CreateView):
 
 class CookUpdateView(LoginRequiredMixin, generic.UpdateView):
     model = Cook
-    form_class = CookForm
+    form_class = CookUpdateForm
     success_url = reverse_lazy("kitchen:cook-list")
+
+    def get_form(self, form_class=None):
+        form = super().get_form(form_class)
+        form.fields["dishes"].initial = self.object.dishes.all()
+        return form
+
+    def form_valid(self, form):
+        cook = form.save(commit=False)
+        cook.dishes.set(form.cleaned_data["dishes"])
+        cook.save()
+        return super().form_valid(form)
 
 
 class CookDeleteView(LoginRequiredMixin, generic.DeleteView):

@@ -17,6 +17,23 @@ class CookForm(UserCreationForm):
         return validate_year_of_experience(years_of_experience)
 
 
+class CookUpdateForm(forms.ModelForm):
+    dishes = forms.ModelMultipleChoiceField(
+        queryset=Dish.objects.all(),
+        required=False,
+        widget=forms.CheckboxSelectMultiple,
+    )
+
+    class Meta:
+        model = Cook
+        fields = ["first_name", "last_name", "years_of_experience"]
+
+    def clean_years_of_experience(self) -> str:
+        years_of_experience = self.cleaned_data["years_of_experience"]
+
+        return validate_year_of_experience(years_of_experience)
+
+
 class DishForm(forms.ModelForm):
     cooks = forms.ModelMultipleChoiceField(
         queryset=get_user_model().objects.all(),
